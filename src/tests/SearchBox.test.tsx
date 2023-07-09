@@ -2,16 +2,22 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import SearchBox from "../components/SearchBox";
 
 describe("SearchBox component", () => {
-  test("should render the search box correctly with the initial inputValue and default placeholder", () => {
-    const active = true;
-    const setActive = jest.fn();
+  const filledInputValue = "example";
+  const emptyInputValue = "";
 
+  const suggestions = [{ value: "Apple" }, { value: "Banana" }];
+
+  const setActive = jest.fn();
+  const setInputValue = jest.fn();
+  const onSubmit = jest.fn();
+  const onEscape = jest.fn();
+
+  test("should render the search box correctly with the initial inputValue and default placeholder", () => {
     const inputValue = "example";
-    const setInputValue = jest.fn();
 
     render(
       <SearchBox
-        active={active}
+        active={true}
         setActive={setActive}
         inputValue={inputValue}
         setInputValue={setInputValue}
@@ -27,19 +33,11 @@ describe("SearchBox component", () => {
   });
 
   test("should render suggestions in active mode", () => {
-    const active = true;
-    const setActive = jest.fn();
-
-    const inputValue = "example";
-    const setInputValue = jest.fn();
-
-    const suggestions = [{ value: "Apple" }, { value: "Banana" }];
-
     render(
       <SearchBox
-        active={active}
+        active={true}
         setActive={setActive}
-        inputValue={inputValue}
+        inputValue={filledInputValue}
         setInputValue={setInputValue}
         suggestions={suggestions}
       />
@@ -51,19 +49,11 @@ describe("SearchBox component", () => {
   });
 
   test("should not render suggestions in idle mode", () => {
-    const active = false;
-    const setActive = jest.fn();
-
-    const inputValue = "";
-    const setInputValue = jest.fn();
-
-    const suggestions = [{ value: "Apple" }, { value: "Banana" }];
-
     render(
       <SearchBox
-        active={active}
+        active={false}
         setActive={setActive}
-        inputValue={inputValue}
+        inputValue={emptyInputValue}
         setInputValue={setInputValue}
         suggestions={suggestions}
       />
@@ -75,19 +65,11 @@ describe("SearchBox component", () => {
   });
 
   test("should call onSubmit when Enter key is pressed", () => {
-    const active = true;
-    const setActive = jest.fn();
-
-    const inputValue = "example";
-    const setInputValue = jest.fn();
-
-    const onSubmit = jest.fn();
-
     render(
       <SearchBox
-        active={active}
+        active={true}
         setActive={setActive}
-        inputValue={inputValue}
+        inputValue={filledInputValue}
         setInputValue={setInputValue}
         onSubmit={onSubmit}
       />
@@ -98,23 +80,15 @@ describe("SearchBox component", () => {
       code: "Enter",
     });
 
-    expect(onSubmit).toHaveBeenCalledWith(inputValue);
+    expect(onSubmit).toHaveBeenCalledWith(filledInputValue);
   });
 
   test("should call onEscape when Escape key is pressed", () => {
-    const active = true;
-    const setActive = jest.fn();
-
-    const inputValue = "example";
-    const setInputValue = jest.fn();
-
-    const onEscape = jest.fn();
-
     render(
       <SearchBox
-        active={active}
+        active={true}
         setActive={setActive}
-        inputValue={inputValue}
+        inputValue={filledInputValue}
         setInputValue={setInputValue}
         onEscape={onEscape}
       />
