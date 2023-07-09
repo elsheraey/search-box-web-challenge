@@ -86,3 +86,27 @@ Can be found in the following [demo component](./src/components/Demo.tsx).
 - Optimization for large suggestion lists: If the suggestions list becomes very long, consider implementing virtual scrolling or pagination to improve performance and user experience. I didn't implement this because I assumed the list of suggestions would be limited like in Google Search. That is, if I were to implement the above autocomplete component I would've added a max number of suggestions.
 
 - Caching: I didn't tackle this due to a similar reason to the above point.
+
+Apologies for the confusion. Here's the revised README.md section specifically for the test section:
+
+## Testing (Added last)
+
+This repo. comes with a basic set of component tests. The tests are implemented using the React Testing Library (RTL) and Jest testing frameworks.
+
+### Running the Tests
+
+- To run the tests for the SearchBox component, Run the test command:
+
+```shell
+npm run test
+```
+
+- You should see something like this in your terminal:
+
+```
+✓ should render the search box correctly with the initial inputValue and default placeholder (14 ms)
+✓ should render suggestions in active mode (5 ms)
+✓ should not render suggestions in idle mode (2 ms)
+✓ should call onSubmit when Enter key is pressed (5 ms)
+✓ should call onEscape when Escape key is pressed (7 ms)
+```
