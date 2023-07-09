@@ -50,6 +50,13 @@ NOTE: I usually prefer other methods to do CSS, even in plain CSS, I am used to 
   border-radius: 0 0 22px 22px;
 }
 
+.search-box .no-suggestions {
+  color: #999;
+  font-size: 14px;
+  padding: 8px;
+  padding-left: 16px;
+}
+
 .search-box .category-name {
   font-size: 12px;
   padding-top: 8px;

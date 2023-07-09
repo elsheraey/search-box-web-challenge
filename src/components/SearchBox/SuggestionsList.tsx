@@ -28,6 +28,10 @@ const SuggestionList: React.FC<SuggestionListProps> = ({
 
   return (
     <div className="suggestions">
+      {suggestions.length === 0 && (
+        <div className="no-suggestions">No suggestions</div>
+      )}
+
       {uncategorizedSuggestions.map((suggestion, index) => (
         <SuggestionItem
           key={index}

@@ -81,6 +81,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({
         onFocus={handleFocus}
         onBlur={handleBlur}
         placeholder={placeholder ?? "Search..."}
+        // NOTE: I added this mainly because I was trying something with RTL (React Testing Library)
         data-testid="search-input"
       />
 
