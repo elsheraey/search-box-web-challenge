@@ -70,6 +70,9 @@ Can be found in the following [demo component](./src/components/Demo.tsx).
 
 - I am not sure if I was supposed to implement the autocomplete or similar behavior?
 
+- It's not clear if I can assume the suggestions input as it could've been done in a way to enable rendering of categorical suggestions without the computation that's currently taking place. So I just assumed what felt meeting the requirements text more.
+
+
 ## Future Improvements
 
 - Add an Autocomplete uncontrolled component wrapping and making use of the SearchBox component.
