@@ -16,7 +16,9 @@ interface SearchBoxProps {
   active: boolean;
   setActive: (isActive: boolean) => void;
 
-  inputValue?: string;
+  inputValue: string;
+  setInputValue: (value: string) => void;
+
   onInputChange?: (value: string) => void;
 
   suggestions?: Suggestion[];
@@ -31,6 +33,8 @@ const SearchBox: React.FC<SearchBoxProps> = ({
   setActive,
 
   inputValue = "",
+  setInputValue,
+
   onInputChange,
 
   suggestions = [],
@@ -43,14 +47,22 @@ const SearchBox: React.FC<SearchBoxProps> = ({
     const value = event.target.value;
     if (onInputChange) {
       onInputChange(value);
+    } else {
+      setInputValue(value);
+      setActive(true);
     }
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter" && onSubmit) {
       onSubmit(inputValue);
-    } else if (event.key === "Escape" && onEscape) {
-      onEscape();
+    } else if (event.key === "Escape") {
+      if (onEscape) {
+        onEscape();
+      } else {
+        setActive(false);
+        setInputValue("");
+      }
     }
   };
 

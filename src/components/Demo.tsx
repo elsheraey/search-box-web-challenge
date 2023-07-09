@@ -2,7 +2,6 @@ import { useState } from "react";
 import appleIcon from "../assets/icons/apple.png";
 import bananaIcon from "../assets/icons/banana.png";
 import SearchBox from "./SearchBox";
-import Suggestion from "./SearchBox/Suggestion";
 
 // NOTE: If I had more time, I would have probably built an Autocomplete component using the SearchBox component
 
@@ -22,18 +21,8 @@ export default function Demo() {
     { value: "Eat", category: "Actions" },
   ];
 
-  const handleInputChange = (value: string) => {
-    setInputValue(value);
-    setActive(true);
-  };
-
-  const handleSubmit = (value: string | Suggestion) => {
+  const handleSubmit = (value: string) => {
     console.log("Submitted:", value);
-    setInputValue("");
-  };
-
-  const handleEscape = () => {
-    setActive(false);
     setInputValue("");
   };
 
@@ -42,10 +31,9 @@ export default function Demo() {
       active={active}
       setActive={setActive}
       inputValue={inputValue}
-      onInputChange={handleInputChange}
+      setInputValue={setInputValue}
       suggestions={suggestions}
       onSubmit={handleSubmit}
-      onEscape={handleEscape}
     />
   );
 }
