@@ -2,6 +2,10 @@
 
 This repository contains a React component called SearchBox that provides a search input field with suggestions built following requirements that can be found [here](./requirements.md).
 
+## Preview
+
+![Demo](./preview.png)
+
 ## Instructions
 
 To run the project and see the SearchBox component in action, follow these steps:
