@@ -10,9 +10,9 @@ This repository contains a React component called SearchBox that provides a sear
 
 To run the project and see the SearchBox component in action, follow these steps:
 
-1. Clone the repository to your local machine:
+1. Clone the repository to your local machine.
 
-2. Navigate to the project directory:
+2. Navigate to the project directory.
 
 3. Install the dependencies:
 
@@ -90,8 +90,6 @@ Can be found in the following [demo component](./src/components/Demo.tsx).
 
 - Caching: I didn't tackle this due to a similar reason to the above point.
 
-Apologies for the confusion. Here's the revised README.md section specifically for the test section:
-
 ## Testing (Added last)
 
 This repo. comes with a basic set of component tests. The tests are implemented using the React Testing Library (RTL) and Jest testing frameworks.
@@ -100,7 +98,7 @@ This repo. comes with a basic set of component tests. The tests are implemented 
 
 - To run the tests for the SearchBox component, Run the test command:
 
-```shell
+```bash
 npm run test
 ```
 
